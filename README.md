@@ -10,12 +10,8 @@ Install flutter sdk
 
 The file tree should look like 
 
-
-
-├── Projects
-│   ├── BillingSystem
-└── sdk
-    └── flutter
+Projects/BillingSystem
+sdk/flutter
 
 In projects clone the repository
 In sdk extract the flutter zip
