@@ -1,6 +1,8 @@
 # BillingSystem
 
-### https://docs.google.com/document/d/1Y3OU9DXbQ4b5WGGCH5r9fIidNEiUdt8Fo32CaPg-z_0/edit
+### Solution Doc
+
+https://docs.google.com/document/d/1Y3OU9DXbQ4b5WGGCH5r9fIidNEiUdt8Fo32CaPg-z_0/edit
 
 ### How to setup codebase
 
@@ -10,8 +12,8 @@ Install flutter sdk
 
 The file tree should look like 
 
-Projects/BillingSystem
-sdk/flutter
+1. Projects/BillingSystem
+2. sdk/flutter
 
 In projects clone the repository
 In sdk extract the flutter zip
