@@ -1,11 +1,11 @@
 import 'package:billing_system/dbHelper/MongoDatabase.dart';
 import 'package:flutter/material.dart';
 import 'Configs/product.dart';
-import 'screens/Homepage.dart';
+import 'screens/CounterPage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await MongoDatabase.connect();
+  // await MongoDatabase.connect();
   runApp(const MyApp());
 }
 
