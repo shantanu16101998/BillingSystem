@@ -32,6 +32,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    defaultConfig {
+        multiDexEnabled true
+    }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }

@@ -12,3 +12,5 @@ List<ProductObj> productList = [
   ProductObj(0, 'Matar'),
   ProductObj(0, 'Bhindi'),
 ];
+
+const phone_width = 760;

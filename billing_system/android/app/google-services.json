@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "903387433194",
+    "project_id": "billing-system-shansau",
+    "storage_bucket": "billing-system-shansau.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903387433194:android:e4824a04ae05c041a5af93",
+        "android_client_info": {
+          "package_name": "com.example.billing_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD3CZUDfX2sDuv7CDMpWvJqoQzOf6L6RA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
