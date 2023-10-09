@@ -15,9 +15,7 @@ class MenuItem extends StatelessWidget {
           child: Text(
             title,
             textAlign: TextAlign.center,
-            style: const TextStyle(
-                // Customize the text style as needed
-                ),
+            style: const TextStyle(fontWeight: FontWeight.w600),
           ),
         ),
         onTap: () {

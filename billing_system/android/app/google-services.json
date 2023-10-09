@@ -12,7 +12,12 @@
           "package_name": "com.example.billing_system"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "903387433194-eumlmcjcblu0sfpdgt4aeundbo253dag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDD3CZUDfX2sDuv7CDMpWvJqoQzOf6L6RA"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903387433194-eumlmcjcblu0sfpdgt4aeundbo253dag.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "903387433194-3tq0mg9ln5ppr92r58c9u5p0dds4d7dt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.billingSystem"
+              }
+            }
+          ]
         }
       }
     }

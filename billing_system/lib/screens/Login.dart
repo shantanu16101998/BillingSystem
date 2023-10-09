@@ -19,8 +19,16 @@ class LoginPage extends State<LoginState> {
   double screenHeight = 0.0;
   double keyboardHeight = 0.0;
 
-  Future<void> _performGoogleAuth() async {
-    await Google.signInWithGoogle();
+  Future<void> _performGoogleAuth(BuildContext context) async {
+    try {
+      await Google.signInWithGoogle();
+      if (Google.isAuthenticated()) {
+        // If authentication is successful, navigate to the homepage
+        Navigator.pushReplacementNamed(context, '/home');
+      }
+    } catch (e) {
+      print('Error performing Google authentication: $e');
+    }
   }
 
   Future<void> _performFacebookAuth() async {
@@ -162,7 +170,9 @@ class LoginPage extends State<LoginState> {
                           width: 56,
                           height: 56,
                           child: GestureDetector(
-                            onTap: _performGoogleAuth,
+                            onTap: () {
+                              _performGoogleAuth(context);
+                            },
                             child: Container(
                               width: 56,
                               height: 56,
@@ -210,7 +220,9 @@ class LoginPage extends State<LoginState> {
                           width: 56,
                           height: 56,
                           child: GestureDetector(
-                            onTap: _performGoogleAuth,
+                            onTap: () {
+                              _performGoogleAuth(context);
+                            },
                             child: Container(
                               width: 56,
                               height: 56,
