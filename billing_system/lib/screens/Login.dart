@@ -1,5 +1,7 @@
+import 'package:billing_system/services/facebook.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 import '../services/Google.dart';
 import 'Password.dart';
@@ -19,6 +21,10 @@ class LoginPage extends State<LoginState> {
 
   Future<void> _performGoogleAuth() async {
     await Google.signInWithGoogle();
+  }
+
+  Future<void> _performFacebookAuth() async {
+    await Facebook.loginWithFacebook();
   }
 
   @override
@@ -180,7 +186,7 @@ class LoginPage extends State<LoginState> {
                           width: 56,
                           height: 56,
                           child: GestureDetector(
-                            onTap: _performGoogleAuth,
+                            onTap: _performFacebookAuth,
                             child: Container(
                               width: 56,
                               height: 56,

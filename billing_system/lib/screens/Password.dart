@@ -142,7 +142,7 @@ class PinPageState extends State<PinState> {
                       ),
                       width: 356,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {Navigator.pushNamed(context, '/home');},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           foregroundColor: Colors.white,

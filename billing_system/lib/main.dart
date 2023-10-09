@@ -1,5 +1,7 @@
 import 'package:billing_system/dbHelper/MongoDatabase.dart';
+import 'package:billing_system/screens/CounterPage.dart';
 import 'package:billing_system/screens/Login.dart';
+import 'package:billing_system/screens/Home.dart';
 import 'package:billing_system/screens/Password.dart';
 import 'package:billing_system/screens/Testing.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginState(),
         '/pin': (context) => const PinState(),
+        '/home': (context) => const HomeState()
         // Add other routes if needed
       },
     );

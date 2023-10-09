@@ -1,6 +1,6 @@
 import 'package:billing_system/models/Sales.dart';
 import 'package:flutter/material.dart';
-import 'package:billing_system/Configs/product.dart';
+import 'package:billing_system/Configs/Constants.dart';
 import 'package:billing_system/components/ProductCounter.dart';
 import 'package:mongo_dart/mongo_dart.dart' as Mongo;
 import 'package:billing_system/dbHelper/MongoDatabase.dart';
