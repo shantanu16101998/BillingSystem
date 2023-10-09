@@ -12,9 +12,9 @@ class PinState extends StatefulWidget {
 
 class PinPageState extends State<PinState> {
   final List<FocusNode> pinFocusNodes =
-  List.generate(6, (index) => FocusNode());
+      List.generate(6, (index) => FocusNode());
   final List<TextEditingController> pinControllers =
-  List.generate(6, (index) => TextEditingController());
+      List.generate(6, (index) => TextEditingController());
   double containerHeightPercentage = 60.0;
 
   Future<void> _performGoogleAuth() async {
@@ -91,7 +91,7 @@ class PinPageState extends State<PinState> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
                         6,
-                            (index) => Container(
+                        (index) => Container(
                           width: 30,
                           // Adjust the width of each digit container
                           height: 40,
@@ -142,7 +142,9 @@ class PinPageState extends State<PinState> {
                       ),
                       width: 356,
                       child: ElevatedButton(
-                        onPressed: () {Navigator.pushNamed(context, '/home');},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           foregroundColor: Colors.white,
@@ -163,4 +165,3 @@ class PinPageState extends State<PinState> {
     );
   }
 }
-

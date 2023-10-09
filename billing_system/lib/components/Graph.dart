@@ -2,27 +2,23 @@ import 'package:billing_system/Configs/Constants.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-
-
 class Graph extends StatelessWidget {
   const Graph({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    final List<String> monthsText = ['Jan','Feb','Mar'];
+    final List<String> monthsText = ['Jan', 'Feb', 'Mar'];
     return LineChart(
-
       LineChartData(
-
         gridData: FlGridData(show: false),
         titlesData: FlTitlesData(
-          show: true, // Show title data
+          show: true,
+          // Show title data
           leftTitles: SideTitles(
             showTitles: true,
             getTitles: (value) {
               // Customize the bottom titles using your own text
-             return value.toInt().toString();
+              return value.toInt().toString();
             },
           ),
           bottomTitles: SideTitles(
@@ -35,14 +31,17 @@ class Graph extends StatelessWidget {
               return '';
             },
           ),
-          topTitles: SideTitles(showTitles: false), // Hide top titles
+          topTitles: SideTitles(showTitles: false),
+          // Hide top titles
           rightTitles: SideTitles(showTitles: false), // Hide right titles
         ),
         borderData: FlBorderData(
           show: true, // Show chart border
           border: const Border(
-            left: BorderSide(color: Colors.black, width: 1), // Customize left border
-            bottom: BorderSide(color: Colors.black, width: 1), // Customize bottom border
+            left: BorderSide(color: Colors.black, width: 1),
+            // Customize left border
+            bottom: BorderSide(
+                color: Colors.black, width: 1), // Customize bottom border
           ),
         ),
         minX: -0.2,
@@ -59,12 +58,11 @@ class Graph extends StatelessWidget {
             isCurved: false,
             colors: [Colors.black],
             dotData: FlDotData(show: true),
-            belowBarData: BarAreaData(show: true, colors: [figmaCyan.withOpacity(0.2)]),
-
+            belowBarData:
+                BarAreaData(show: true, colors: [figmaCyan.withOpacity(0.2)]),
           ),
         ],
       ),
     );
   }
 }
-

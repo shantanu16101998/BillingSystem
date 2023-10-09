@@ -23,9 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
         useMaterial3: true,
       ),
-      // home: const MyHomePage(title: 'Billing System'),
-      // home: const PinPage(),
-      home: const LoginState(),
+      home: const HomeState(),
       routes: {
         '/login': (context) => const LoginState(),
         '/pin': (context) => const PinState(),

@@ -4,7 +4,7 @@ class ProductObj {
   var count = 0;
   var name = '';
 
-  ProductObj(this.count,this.name);
+  ProductObj(this.count, this.name);
 }
 
 List<ProductObj> productList = [

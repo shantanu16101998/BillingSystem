@@ -39,7 +39,7 @@ class GraphContainer extends StatelessWidget {
                     height: 223 * figmaHeightFactor,
                     alignment: Alignment.center,
                     child: const Padding(
-                      padding: EdgeInsets.only(top: 10,right: 25,left: 5),
+                      padding: EdgeInsets.only(top: 10, right: 25, left: 5),
                       // padding: EdgeInsets.all(0),
 
                       child: Graph(),

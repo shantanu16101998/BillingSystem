@@ -1,9 +1,9 @@
 import 'package:billing_system/Configs/Constants.dart';
 import 'package:billing_system/components/GraphContainer.dart';
+import 'package:billing_system/components/Menu.dart';
+import 'package:billing_system/components/NotificationPopup.dart';
 import 'package:flutter/material.dart';
-
-import '../services/Google.dart';
-import 'Password.dart';
+import 'package:billing_system/components/NotificationIcon.dart';
 
 class HomeState extends StatefulWidget {
   const HomeState({Key? key}) : super(key: key);
@@ -12,98 +12,64 @@ class HomeState extends StatefulWidget {
   State<StatefulWidget> createState() => HomePage();
 }
 
-class NotificationIcon extends StatelessWidget {
-  const NotificationIcon({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Icon(
-          Icons.notifications,
-          size: 50.0, // Adjust the size of the icon as needed
-          color: Colors.white, // Set the color of the icon
-        ),
-        Positioned(
-          right: 0,
-          top: 0,
-          child: Container(
-            width: 23.0, // Adjust the width of the dot as needed
-            height: 23.0, // Adjust the height of the dot as needed
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.black, // Set the color to #55AABB
-            ),
-          ),
-        ),
-        Positioned(
-          right: 0,
-          top: 0,
-          child: Container(
-            width: 20.0, // Adjust the width of the dot as needed
-            height: 20.0, // Adjust the height of the dot as needed
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Color(0xFF55AABB), // Set the color to #55AABB
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 class HomePage extends State<HomeState> {
-  final TextEditingController usernameController = TextEditingController();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   double containerHeightPercentage = 70.0;
   double screenHeight = 0.0;
   double keyboardHeight = 0.0;
+
+  void _openDrawer() {
+    _scaffoldKey.currentState?.openDrawer();
+  }
 
   @override
   Widget build(BuildContext context) {
     double visibleScreenHeight = MediaQuery.of(context).size.height -
         MediaQuery.of(context).viewInsets.bottom;
 
-    // Calculate the container height as a percentage of the screen height
     double containerHeight =
         (visibleScreenHeight * containerHeightPercentage) / 100.0;
 
-    // Determine if the keyboard is visible
-    bool isKeyboardVisible = MediaQuery.of(context).viewInsets.bottom > 0;
+    double screenStartHeight = (visibleScreenHeight * 5) / 100;
 
     return Scaffold(
+      key: _scaffoldKey, // Add this line to associate the key with the Scaffold
       backgroundColor: Colors.black,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const SizedBox(
-            height: 60,
+          SizedBox(
+            height: screenStartHeight,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.menu_rounded,
-                    color: Colors.white,
-                    size: 50,
-                  )),
+                onPressed: _openDrawer,
+                // Open the Drawer when the icon is tapped
+                icon: const Icon(
+                  Icons.menu_rounded,
+                  color: Colors.white,
+                  size: 50,
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.only(right: 20),
                 child: Row(
                   children: [
-                    const NotificationIcon(),
+                    // const NotificationIcon(),
+                    const NotificationPopup(),
                     const SizedBox(
                       width: 10,
                     ),
                     IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.logout_rounded,
-                          color: Colors.white,
-                          size: 50,
-                        )),
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.logout_rounded,
+                        color: Colors.white,
+                        size: 50,
+                      ),
+                    ),
                   ],
                 ),
               )
@@ -115,7 +81,7 @@ class HomePage extends State<HomeState> {
           const Padding(
             padding: EdgeInsets.all(10.0),
             child: Align(
-              alignment: Alignment.centerLeft, // Align text to the left
+              alignment: Alignment.centerLeft,
               child: Text(
                 'Overview',
                 style: TextStyle(
@@ -141,7 +107,7 @@ class HomePage extends State<HomeState> {
                 children: [
                   const GraphContainer(),
                   const SizedBox(
-                    height: 48 * figmaHeightFactor,
+                    height: 40 * figmaHeightFactor,
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -167,6 +133,7 @@ class HomePage extends State<HomeState> {
           ),
         ],
       ),
+      drawer: Menu(),
     );
   }
 }

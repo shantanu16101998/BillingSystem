@@ -11,8 +11,6 @@ class BiometricsState extends StatefulWidget {
 }
 
 class Biometrics extends State<BiometricsState> {
-
-
   Future<void> performAuth() async {
     await LocalAuth.authenticate();
   }
