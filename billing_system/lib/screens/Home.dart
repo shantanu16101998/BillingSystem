@@ -2,8 +2,8 @@ import 'package:billing_system/Configs/Constants.dart';
 import 'package:billing_system/components/GraphContainer.dart';
 import 'package:billing_system/components/Menu.dart';
 import 'package:billing_system/components/NotificationPopup.dart';
+import 'package:billing_system/services/Google.dart';
 import 'package:flutter/material.dart';
-import 'package:billing_system/components/NotificationIcon.dart';
 
 class HomeState extends StatefulWidget {
   const HomeState({Key? key}) : super(key: key);
@@ -21,6 +21,18 @@ class HomePage extends State<HomeState> {
   void _openDrawer() {
     _scaffoldKey.currentState?.openDrawer();
   }
+
+  Future<void> _googleSignOut(BuildContext context) async {
+    try {
+      await Google.signOut();
+      if (!Google.isAuthenticated()) {
+        Navigator.pushReplacementNamed(context, '/login');
+      }
+    } catch (e) {
+      print('Error performing Google authentication: $e');
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +75,7 @@ class HomePage extends State<HomeState> {
                       width: 10,
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () { _googleSignOut(context);},
                       icon: const Icon(
                         Icons.logout_rounded,
                         color: Colors.white,

@@ -16,7 +16,7 @@ class MenuItem extends StatelessWidget {
             title,
             textAlign: TextAlign.center,
             style: const TextStyle(
-                // Customize the text style as needed
+                fontWeight: FontWeight.w600
                 ),
           ),
         ),
