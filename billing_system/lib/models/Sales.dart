@@ -5,23 +5,17 @@ import 'dart:convert';
 // }
 
 class Sales {
-
   String id;
   String productId;
   int quantity;
 
-  Sales({required this.id,required this.productId,required this.quantity});
+  Sales({required this.id, required this.productId, required this.quantity});
 
-  factory Sales.fromJSON(Map<String,dynamic> json) => Sales(
+  factory Sales.fromJSON(Map<String, dynamic> json) => Sales(
       id: json["_id"],
       productId: json["productId"],
-      quantity: json["quantity"]
-  );
+      quantity: json["quantity"]);
 
-  Map<String,dynamic> toJSON() =>
-      {
-        "_id": id,
-        "productId" : productId,
-        "quantity" : quantity
-      };
+  Map<String, dynamic> toJSON() =>
+      {"_id": id, "productId": productId, "quantity": quantity};
 }

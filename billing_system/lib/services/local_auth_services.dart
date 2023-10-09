@@ -13,8 +13,8 @@ class LocalAuth {
       return await _auth.authenticate(
           authMessages: const [],
           localizedReason: 'Use fingerprint to authenticate');
-      options: const AuthenticationOptions(useErrorDialogs: true, stickyAuth: true);
-
+      options:
+      const AuthenticationOptions(useErrorDialogs: true, stickyAuth: true);
     } catch (exception) {
       print(exception);
       return false;
