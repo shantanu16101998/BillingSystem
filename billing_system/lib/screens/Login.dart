@@ -31,8 +31,6 @@ class LoginPage extends State<LoginState> {
     }
   }
 
-
-
   Future<void> _performFacebookAuth() async {
     await Facebook.loginWithFacebook();
   }
@@ -172,7 +170,9 @@ class LoginPage extends State<LoginState> {
                           width: 56,
                           height: 56,
                           child: GestureDetector(
-                            onTap: () { _performGoogleAuth(context);},
+                            onTap: () {
+                              _performGoogleAuth(context);
+                            },
                             child: Container(
                               width: 56,
                               height: 56,
@@ -220,7 +220,9 @@ class LoginPage extends State<LoginState> {
                           width: 56,
                           height: 56,
                           child: GestureDetector(
-                            onTap: () { _performGoogleAuth(context);},
+                            onTap: () {
+                              _performGoogleAuth(context);
+                            },
                             child: Container(
                               width: 56,
                               height: 56,

@@ -9,7 +9,8 @@ class NotificationPopup extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopupMenuButton<String>(
       color: figmawhite,
-      offset: const Offset(0, 50), // Adjust the offset here
+      offset: const Offset(0, 50),
+      // Adjust the offset here
       onSelected: (value) {
         // Handle the selected menu item here
         if (value == 'menuItem1') {
@@ -37,7 +38,10 @@ class NotificationPopup extends StatelessWidget {
                   onPressed: () {},
                   child: const Text(
                     'View All',
-                    style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,decoration: TextDecoration.underline),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline),
                   )),
             ))),
       ],

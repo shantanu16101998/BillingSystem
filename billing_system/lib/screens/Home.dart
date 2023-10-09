@@ -33,7 +33,6 @@ class HomePage extends State<HomeState> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     double visibleScreenHeight = MediaQuery.of(context).size.height -
@@ -75,7 +74,9 @@ class HomePage extends State<HomeState> {
                       width: 10,
                     ),
                     IconButton(
-                      onPressed: () { _googleSignOut(context);},
+                      onPressed: () {
+                        _googleSignOut(context);
+                      },
                       icon: const Icon(
                         Icons.logout_rounded,
                         color: Colors.white,
